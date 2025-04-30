@@ -3,10 +3,12 @@ from datetime import timedelta
 import os
 from dotenv import load_dotenv
 load_dotenv()
-SECRET_KEY = os.environ.get('SECRET_KEY')
-
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+SECRET_KEY = os.environ.get('SECRET_KEY') or 'django-insecure-fallback-key'
+
+
 
 
 
@@ -20,7 +22,7 @@ CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOW_HEADERS = '*'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
-    "http://localhost:5174",
+    "http://localhost:3000",
     
 ]
 
@@ -49,7 +51,7 @@ SIMPLE_JWT = {
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': True,
     'UPDATE_LAST_LOGIN': False,
-    
+    'ALGORITHM': 'HS256',
     'SIGNING_KEY': SECRET_KEY,
     'VERIFYING_KEY': None,
     'AUTH_HEADER_TYPES': ('Bearer',),
@@ -95,9 +97,9 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('POSTGRES_DB'),
-        'USER': os.environ.get('POSTGRES_USER'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+        'NAME': os.environ.get('POSTGRES_DB', 'diadb'),
+        'USER': os.environ.get('POSTGRES_USER', 'diauser'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'diapassword'),
         'HOST': os.environ.get('POSTGRES_HOST', 'localhost'),
         'PORT': '5432',
     }

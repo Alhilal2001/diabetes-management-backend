@@ -1,17 +1,21 @@
+# backend/main_app/serializers.py
+
 from rest_framework import serializers
 from .models import GlucoseEntry, Meal, Activity
 
 class GlucoseEntrySerializer(serializers.ModelSerializer):
     class Meta:
         model = GlucoseEntry
-        fields = '__all__'
+        fields = ['id', 'glucose_level', 'timestamp']
+
 
 class MealSerializer(serializers.ModelSerializer):
     class Meta:
         model = Meal
-        fields = '__all__'
+        fields = ['id', 'name', 'carbs', 'timestamp']
+
 
 class ActivitySerializer(serializers.ModelSerializer):
     class Meta:
         model = Activity
-        fields = '__all__'
+        fields = ['id', 'name', 'duration', 'timestamp']
