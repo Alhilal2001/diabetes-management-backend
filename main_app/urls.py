@@ -12,6 +12,9 @@ urlpatterns = [
     path('auth/signup/', views.SignupView.as_view(), name='signup'),
     path('auth/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('auth/user/', views.View_UserView.as_view(), name='user-view'),
+    path('auth/change-password/', views.ChangePasswordView.as_view(), name='change-password'),
+
 
     # Glucose
     path('glucose/', views.GlucoseListCreateView.as_view(), name='glucose-list'),
