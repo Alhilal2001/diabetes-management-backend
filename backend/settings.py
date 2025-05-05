@@ -100,7 +100,8 @@ DATABASES = {
         'NAME': os.environ.get('POSTGRES_DB', 'diadb'),
         'USER': os.environ.get('POSTGRES_USER', 'diauser'),
         'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'diapassword'),
-        'HOST': os.environ.get('POSTGRES_HOST', 'localhost'),
+        'HOST': os.environ.get('POSTGRES_HOST', 'db'),
+
         'PORT': '5432',
     }
 }
