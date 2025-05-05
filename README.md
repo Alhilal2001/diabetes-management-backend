@@ -62,3 +62,12 @@ IN CLASS SOLUTION CODE:
 - Glucose
 - Meal
 - Activity
+
+## IceBox Features
+
+- Blood sugar prediction using ML integration
+- Admin panel for monitoring users
+- Email reminders for glucose checks
+- Charts with filterable timelines (day, week, month)
+- Export data to CSV/PDF
+- Multi-language support
