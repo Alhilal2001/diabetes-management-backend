@@ -97,10 +97,10 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('POSTGRES_DB', 'diadb'),
-        'USER': os.environ.get('POSTGRES_USER', 'diauser'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'diapassword'),
-        'HOST': os.environ.get('POSTGRES_HOST', 'localhost'),
+        'NAME': 'diabetesmanagement',
+        'USER': 'diabetes_admin',
+        'PASSWORD': 'password',
+        # 'HOST': os.environ.get('POSTGRES_HOST', 'localhost'),
         'PORT': '5432',
     }
 }
